@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Two" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-5W-E5l">
-                                <rect key="frame" x="20" y="379" width="335" height="30"/>
+                                <rect key="frame" x="20" y="390" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -43,12 +43,18 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Grh-5W-E5l" firstAttribute="leading" secondItem="8Kn-Ff-bsD" secondAttribute="leading" id="0lZ-3L-mHo"/>
+                            <constraint firstItem="VXW-Dm-ytb" firstAttribute="top" secondItem="Grh-5W-E5l" secondAttribute="bottom" constant="247" id="1Hr-FY-Tsg"/>
                             <constraint firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" constant="20" id="AjL-Zy-Uw7"/>
-                            <constraint firstItem="Grh-5W-E5l" firstAttribute="top" secondItem="8Kn-Ff-bsD" secondAttribute="bottom" constant="129" id="Hsi-Jj-sw5"/>
+                            <constraint firstItem="Grh-5W-E5l" firstAttribute="top" secondItem="8Kn-Ff-bsD" secondAttribute="bottom" constant="140" id="Hsi-Jj-sw5"/>
                             <constraint firstItem="8Kn-Ff-bsD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="b5b-Y3-fjn"/>
                             <constraint firstItem="Grh-5W-E5l" firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" id="bjq-Jp-ing"/>
                             <constraint firstItem="8Kn-Ff-bsD" firstAttribute="top" secondItem="rTM-hu-uop" secondAttribute="bottom" constant="200" id="dAs-Xd-V56"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dAs-Xd-V56"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var activeTextField: UITextField!
+    var keyboardHeight: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,25 +37,24 @@ class ViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
-            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        }, completion: nil)
+        self.view.frame.origin.y = 0
     }
     
     @objc func keyboardDidShow(notification: Notification) {
         let info: NSDictionary = notification.userInfo! as NSDictionary
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        let keyboardY = self.view.frame.height - keyboardSize.height
+        var keyboardY = self.view.frame.height - keyboardSize.height
+        if keyboardSize.height > 0 {
+            keyboardHeight = keyboardSize.height
+        }
+        keyboardY = self.view.frame.height - keyboardHeight
         let editingTextFieldY = self.activeTextField.frame.origin.y
+        let padding: CGFloat = 60
         
         if self.view.frame.origin.y >= 0 {
-            if editingTextFieldY > keyboardY - 60 {
-                UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-                    self.view.frame = CGRect(x: 0,
-                                             y: self.view.frame.origin.y - (editingTextFieldY - (keyboardY - 60)),
-                                             width: self.view.frame.width,
-                                             height: self.view.frame.height)
-                }, completion: nil)
+            if editingTextFieldY > keyboardY - padding {
+                let yOffset = self.view.frame.origin.y - (editingTextFieldY - (keyboardY - padding))
+                self.view.frame.origin.y = yOffset
             }
         }
     }
