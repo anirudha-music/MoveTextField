@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Two" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-5W-E5l">
-                                <rect key="frame" x="20" y="390" width="335" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-5W-E5l">
+                                <rect key="frame" x="20" y="537" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -30,24 +30,36 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mlY-me-aZk"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="One" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Kn-Ff-bsD">
-                                <rect key="frame" x="20" y="220" width="335" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ASCII Numer pad" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Kn-Ff-bsD">
+                                <rect key="frame" x="20" y="477" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YjI-b5-KJC"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acU-3t-6Ib">
+                                <rect key="frame" x="20" y="413" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YjI-b5-KJC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="I87-in-mp4"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Grh-5W-E5l" firstAttribute="leading" secondItem="8Kn-Ff-bsD" secondAttribute="leading" id="0lZ-3L-mHo"/>
-                            <constraint firstItem="VXW-Dm-ytb" firstAttribute="top" secondItem="Grh-5W-E5l" secondAttribute="bottom" constant="247" id="1Hr-FY-Tsg"/>
+                            <constraint firstItem="VXW-Dm-ytb" firstAttribute="top" secondItem="Grh-5W-E5l" secondAttribute="bottom" constant="100" id="1Hr-FY-Tsg"/>
                             <constraint firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" constant="20" id="AjL-Zy-Uw7"/>
-                            <constraint firstItem="Grh-5W-E5l" firstAttribute="top" secondItem="8Kn-Ff-bsD" secondAttribute="bottom" constant="140" id="Hsi-Jj-sw5"/>
+                            <constraint firstItem="Grh-5W-E5l" firstAttribute="top" secondItem="8Kn-Ff-bsD" secondAttribute="bottom" constant="30" id="Hsi-Jj-sw5"/>
+                            <constraint firstItem="acU-3t-6Ib" firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" id="MIg-Mw-joh"/>
+                            <constraint firstItem="acU-3t-6Ib" firstAttribute="leading" secondItem="8Kn-Ff-bsD" secondAttribute="leading" id="UTz-E4-9EX"/>
                             <constraint firstItem="8Kn-Ff-bsD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="b5b-Y3-fjn"/>
                             <constraint firstItem="Grh-5W-E5l" firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" id="bjq-Jp-ing"/>
+                            <constraint firstItem="8Kn-Ff-bsD" firstAttribute="top" secondItem="acU-3t-6Ib" secondAttribute="bottom" constant="34" id="bvN-bf-mUi"/>
                             <constraint firstItem="8Kn-Ff-bsD" firstAttribute="top" secondItem="rTM-hu-uop" secondAttribute="bottom" constant="200" id="dAs-Xd-V56"/>
                         </constraints>
                         <variation key="default">

@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
     
     var activeTextField: UITextField!
-    var keyboardHeight: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +41,9 @@ class ViewController: UIViewController {
     
     @objc func keyboardDidShow(notification: Notification) {
         let info: NSDictionary = notification.userInfo! as NSDictionary
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        var keyboardY = self.view.frame.height - keyboardSize.height
-        if keyboardSize.height > 0 {
-            keyboardHeight = keyboardSize.height
-        }
-        keyboardY = self.view.frame.height - keyboardHeight
+        let keyboardSize = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        print(keyboardSize)
+        let keyboardY = self.view.frame.height - keyboardSize.height
         let editingTextFieldY = self.activeTextField.frame.origin.y
         let padding: CGFloat = 60
         
