@@ -3,7 +3,7 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## User settings
-xcuserdata/
+TextField-Keyboard.xcodeproj/xcuserdata/
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
@@ -25,3 +25,6 @@ DerivedData/
 key
 key.pub
 .DS_Store
+
+TextField-Keyboard.xcodeproj/xcuserdata/
+TextField-Keyboard.xcodeproj/project.xcworkspace/xcuserdata/

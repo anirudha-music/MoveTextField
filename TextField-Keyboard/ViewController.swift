@@ -20,8 +20,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -31,26 +30,31 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        resetViewFrame()
         view.endEditing(true)
     }
     
-    @objc func keyboardWillHide(notification: Notification) {
+    func resetViewFrame() {
         self.view.frame.origin.y = 0
     }
     
     @objc func keyboardDidShow(notification: Notification) {
-        let info: NSDictionary = notification.userInfo! as NSDictionary
-        let keyboardSize = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        print(keyboardSize)
-        let keyboardY = self.view.frame.height - keyboardSize.height
-        let editingTextFieldY = self.activeTextField.frame.origin.y
-        let padding: CGFloat = 60
-        
-        if self.view.frame.origin.y >= 0 {
-            if editingTextFieldY > keyboardY - padding {
-                let yOffset = self.view.frame.origin.y - (editingTextFieldY - (keyboardY - padding))
-                self.view.frame.origin.y = yOffset
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration: TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+            let animationCurve: UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            var yOffset: CGFloat = 0
+            if endFrame?.origin.y ?? 0 >= UIScreen.main.bounds.size.height {
+                yOffset = 0.0
+            } else {
+                yOffset = endFrame?.size.height ?? 0
             }
+            
+            UIView.animate(withDuration: duration, delay: 0, options: animationCurve, animations: {
+                self.view.frame.origin.y = yOffset
+            }, completion: nil)
         }
     }
 }
@@ -58,6 +62,7 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        resetViewFrame()
         return true
     }
     
