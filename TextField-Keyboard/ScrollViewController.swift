@@ -57,14 +57,14 @@ class ScrollViewController: UIViewController {
         
         if self.view.frame.origin.y >= 0 {
             if editingTextFieldY > keyboardY - padding {
-                let yOffset = self.view.frame.origin.y - (editingTextFieldY - (keyboardY - padding) - getVisibleRect().origin.y)
+                let yOffset = self.view.frame.origin.y - (editingTextFieldY - (keyboardY - padding) - getScrollViewVisibleRect().origin.y)
                 print(yOffset)
                 self.view.frame.origin.y = yOffset
             }
         }
     }
     
-    func getVisibleRect() -> CGRect {
+    func getScrollViewVisibleRect() -> CGRect {
         var visibleRect = CGRect()
         visibleRect.origin = scrollView.contentOffset
         visibleRect.size = scrollView.bounds.size
