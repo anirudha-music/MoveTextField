@@ -1,22 +1,27 @@
 //
-//  ViewController.swift
+//  ScrollViewController.swift
 //  TextField-Keyboard
 //
-//  Created by Anirudha on 11/10/17.
-//  Copyright © 2017 Anirudha Mahale. All rights reserved.
+//  Created by Anirudha on 16/03/18.
+//  Copyright © 2018 Anirudha Mahale. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ScrollViewController: UIViewController {
+
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollContentView: UIView!
     var activeTextField: UIView!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        scrollContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(forceEndEditing)))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -26,6 +31,10 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        forceEndEditing()
+    }
+    
+    @objc private func forceEndEditing() {
         view.endEditing(true)
     }
     
@@ -48,14 +57,29 @@ class ViewController: UIViewController {
         
         if self.view.frame.origin.y >= 0 {
             if editingTextFieldY > keyboardY - padding {
-                let yOffset = self.view.frame.origin.y - (editingTextFieldY - (keyboardY - padding))
+                let yOffset = self.view.frame.origin.y - (editingTextFieldY - (keyboardY - padding) - getVisibleRect().origin.y)
+                print(yOffset)
                 self.view.frame.origin.y = yOffset
             }
         }
     }
+    
+    func getVisibleRect() -> CGRect {
+        var visibleRect = CGRect()
+        visibleRect.origin = scrollView.contentOffset
+        visibleRect.size = scrollView.bounds.size
+        
+        let theScale: CGFloat = 1.0 / 1.0
+        visibleRect.origin.x *= theScale
+        visibleRect.origin.y *= theScale
+        visibleRect.size.width *= theScale
+        visibleRect.size.height *= theScale
+        
+        return visibleRect
+    }
 }
 
-extension ViewController: UITextFieldDelegate {
+extension ScrollViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
