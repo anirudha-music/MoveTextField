@@ -12,11 +12,6 @@ class ViewController: UIViewController {
     
     var activeTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -35,7 +30,11 @@ class ViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        self.view.frame.origin.y = 0
+        if let navHeight = self.navigationController?.navigationBar.frame.height {
+            self.view.frame.origin.y = 0 + navHeight + UIApplication.shared.statusBarFrame.height
+        } else {
+            self.view.frame.origin.y = 0
+        }
     }
     
     @objc func keyboardDidShow(notification: Notification) {
