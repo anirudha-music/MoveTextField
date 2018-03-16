@@ -21,76 +21,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCb-3w-H4p">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WgT-xI-wRl" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acU-3t-6Ib">
-                                                <rect key="frame" x="20" y="399" width="335" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="I87-in-mp4"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ASCII Numer pad" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Kn-Ff-bsD">
-                                                <rect key="frame" x="20" y="463" width="335" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YjI-b5-KJC"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-5W-E5l">
-                                                <rect key="frame" x="20" y="523" width="335" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mlY-me-aZk"/>
-                                                </connections>
-                                            </textField>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Grh-5W-E5l" secondAttribute="bottom" constant="50" id="4ca-eq-OUh"/>
-                                            <constraint firstItem="Grh-5W-E5l" firstAttribute="leading" secondItem="8Kn-Ff-bsD" secondAttribute="leading" id="8mW-av-AXC"/>
-                                            <constraint firstItem="8Kn-Ff-bsD" firstAttribute="leading" secondItem="WgT-xI-wRl" secondAttribute="leading" constant="20" id="EzM-Bd-8dz"/>
-                                            <constraint firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" constant="20" id="GqA-1R-3vt"/>
-                                            <constraint firstItem="8Kn-Ff-bsD" firstAttribute="top" secondItem="acU-3t-6Ib" secondAttribute="bottom" constant="34" id="MYx-5H-czq"/>
-                                            <constraint firstItem="Grh-5W-E5l" firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" id="N14-0Y-tMN"/>
-                                            <constraint firstItem="acU-3t-6Ib" firstAttribute="leading" secondItem="8Kn-Ff-bsD" secondAttribute="leading" id="ROL-jq-JhL"/>
-                                            <constraint firstItem="acU-3t-6Ib" firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" id="wZF-jE-xZG"/>
-                                            <constraint firstItem="Grh-5W-E5l" firstAttribute="top" secondItem="8Kn-Ff-bsD" secondAttribute="bottom" constant="30" id="xfW-s7-J88"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="WgT-xI-wRl" secondAttribute="trailing" id="4ds-Pt-67j"/>
-                                    <constraint firstItem="WgT-xI-wRl" firstAttribute="top" secondItem="qCb-3w-H4p" secondAttribute="top" id="FVF-u9-nNP"/>
-                                    <constraint firstAttribute="bottom" secondItem="WgT-xI-wRl" secondAttribute="bottom" id="V2R-YC-VOa"/>
-                                    <constraint firstItem="WgT-xI-wRl" firstAttribute="leading" secondItem="qCb-3w-H4p" secondAttribute="leading" id="u1L-sA-37v"/>
-                                </constraints>
-                            </scrollView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acU-3t-6Ib">
+                                <rect key="frame" x="20" y="286" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="I87-in-mp4"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-5W-E5l">
+                                <rect key="frame" x="20" y="405" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mlY-me-aZk"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ASCII Numer pad" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Kn-Ff-bsD">
+                                <rect key="frame" x="20" y="523" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YjI-b5-KJC"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WgT-xI-wRl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="2Xq-0H-9gk"/>
-                            <constraint firstAttribute="trailing" secondItem="qCb-3w-H4p" secondAttribute="trailing" id="6lB-Se-Hnz"/>
-                            <constraint firstItem="WgT-xI-wRl" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="250" id="HKs-ZV-TzG"/>
-                            <constraint firstItem="VXW-Dm-ytb" firstAttribute="top" secondItem="qCb-3w-H4p" secondAttribute="bottom" id="XbK-7j-YvI"/>
-                            <constraint firstItem="qCb-3w-H4p" firstAttribute="top" secondItem="rTM-hu-uop" secondAttribute="bottom" id="u2l-sH-nXA"/>
-                            <constraint firstItem="qCb-3w-H4p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ysC-Ex-yDa"/>
+                            <constraint firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" constant="20" id="Fs4-G2-Z08"/>
+                            <constraint firstItem="VXW-Dm-ytb" firstAttribute="top" secondItem="8Kn-Ff-bsD" secondAttribute="bottom" constant="50" id="H7j-wt-Fka"/>
+                            <constraint firstItem="8Kn-Ff-bsD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Tqv-5d-pyt"/>
+                            <constraint firstItem="acU-3t-6Ib" firstAttribute="leading" secondItem="Grh-5W-E5l" secondAttribute="leading" id="WzE-D3-1l5"/>
+                            <constraint firstItem="Grh-5W-E5l" firstAttribute="width" secondItem="8Kn-Ff-bsD" secondAttribute="width" id="b3D-aq-bRi"/>
+                            <constraint firstItem="acU-3t-6Ib" firstAttribute="trailing" secondItem="Grh-5W-E5l" secondAttribute="trailing" id="hOO-wk-Cni"/>
+                            <constraint firstItem="8Kn-Ff-bsD" firstAttribute="top" secondItem="Grh-5W-E5l" secondAttribute="bottom" constant="88" id="nSU-1a-OnD"/>
+                            <constraint firstItem="Grh-5W-E5l" firstAttribute="centerX" secondItem="8Kn-Ff-bsD" secondAttribute="centerX" id="r3j-dd-EBL"/>
+                            <constraint firstItem="Grh-5W-E5l" firstAttribute="top" secondItem="acU-3t-6Ib" secondAttribute="bottom" constant="89" id="zIY-A0-40J"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="UIKeyboard-Handling" id="rXF-cr-KIr"/>
-                    <connections>
-                        <outlet property="scrollView" destination="qCb-3w-H4p" id="XXd-fO-5Pt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

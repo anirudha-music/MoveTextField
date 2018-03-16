@@ -10,13 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var scrollView: UIScrollView!
     var activeTextField: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -36,7 +30,11 @@ class ViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        self.scrollView.frame.origin.y = 0
+        if let navHeight = self.navigationController?.navigationBar.frame.height {
+            self.view.frame.origin.y = 0 + navHeight + UIApplication.shared.statusBarFrame.height
+        } else {
+            self.view.frame.origin.y = 0
+        }
     }
     
     @objc func keyboardDidShow(notification: Notification) {
@@ -47,10 +45,10 @@ class ViewController: UIViewController {
         let editingTextFieldY = self.activeTextField.frame.origin.y
         let padding: CGFloat = 60
         
-        if self.scrollView.frame.origin.y >= 0 {
+        if self.view.frame.origin.y >= 0 {
             if editingTextFieldY > keyboardY - padding {
                 let yOffset = self.view.frame.origin.y - (editingTextFieldY - (keyboardY - padding))
-                self.scrollView.frame.origin.y = yOffset
+                self.view.frame.origin.y = yOffset
             }
         }
     }
