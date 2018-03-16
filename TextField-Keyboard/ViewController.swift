@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     var activeTextField: UITextField!
     
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        self.view.frame.origin.y = 0
+        self.scrollView.frame.origin.y = 0
     }
     
     @objc func keyboardDidShow(notification: Notification) {
@@ -46,10 +47,10 @@ class ViewController: UIViewController {
         let editingTextFieldY = self.activeTextField.frame.origin.y
         let padding: CGFloat = 60
         
-        if self.view.frame.origin.y >= 0 {
+        if self.scrollView.frame.origin.y >= 0 {
             if editingTextFieldY > keyboardY - padding {
                 let yOffset = self.view.frame.origin.y - (editingTextFieldY - (keyboardY - padding))
-                self.view.frame.origin.y = yOffset
+                self.scrollView.frame.origin.y = yOffset
             }
         }
     }
