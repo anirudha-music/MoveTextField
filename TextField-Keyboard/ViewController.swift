@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         let keyboardY = self.view.frame.height - keyboardSize.height
         let editingTextFieldY = self.activeTextField.frame.origin.y
         //MARK:- This is the paddin between the keyboard and the textView or textField
-        let padding: CGFloat = 60
+        let padding: CGFloat = self.activeTextField.frame.height+8
         
         if self.view.frame.origin.y >= 0 {
             if editingTextFieldY > keyboardY - padding {

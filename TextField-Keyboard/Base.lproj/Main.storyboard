@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ksc-6A-NYK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LJv-DD-XzD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,16 +14,12 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextField_Keyboard" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rTM-hu-uop"/>
-                        <viewControllerLayoutGuide type="bottom" id="VXW-Dm-ytb"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acU-3t-6Ib">
-                                <rect key="frame" x="20" y="286" width="335" height="30"/>
+                                <rect key="frame" x="20" y="328" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -31,7 +28,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-5W-E5l">
-                                <rect key="frame" x="20" y="405" width="335" height="30"/>
+                                <rect key="frame" x="20" y="447" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -40,7 +37,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ASCII Numer pad" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Kn-Ff-bsD">
-                                <rect key="frame" x="20" y="523" width="335" height="30"/>
+                                <rect key="frame" x="20" y="565" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
@@ -51,17 +48,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="acU-3t-6Ib" firstAttribute="top" secondItem="rTM-hu-uop" secondAttribute="bottom" constant="286" id="3qt-yb-8mB"/>
-                            <constraint firstItem="VXW-Dm-ytb" firstAttribute="top" secondItem="8Kn-Ff-bsD" secondAttribute="bottom" constant="50" id="8UQ-wm-OEn"/>
-                            <constraint firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" constant="20" id="Fs4-G2-Z08"/>
-                            <constraint firstItem="8Kn-Ff-bsD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Tqv-5d-pyt"/>
+                            <constraint firstItem="kdL-b4-Dzw" firstAttribute="bottom" secondItem="8Kn-Ff-bsD" secondAttribute="bottom" constant="8" id="8UQ-wm-OEn"/>
+                            <constraint firstItem="kdL-b4-Dzw" firstAttribute="trailing" secondItem="8Kn-Ff-bsD" secondAttribute="trailing" constant="20" id="Fs4-G2-Z08"/>
+                            <constraint firstItem="8Kn-Ff-bsD" firstAttribute="leading" secondItem="kdL-b4-Dzw" secondAttribute="leading" constant="20" id="Tqv-5d-pyt"/>
                             <constraint firstItem="acU-3t-6Ib" firstAttribute="leading" secondItem="Grh-5W-E5l" secondAttribute="leading" id="WzE-D3-1l5"/>
                             <constraint firstItem="Grh-5W-E5l" firstAttribute="width" secondItem="8Kn-Ff-bsD" secondAttribute="width" id="b3D-aq-bRi"/>
                             <constraint firstItem="acU-3t-6Ib" firstAttribute="trailing" secondItem="Grh-5W-E5l" secondAttribute="trailing" id="hOO-wk-Cni"/>
                             <constraint firstItem="8Kn-Ff-bsD" firstAttribute="top" secondItem="Grh-5W-E5l" secondAttribute="bottom" constant="88" id="nSU-1a-OnD"/>
+                            <constraint firstItem="acU-3t-6Ib" firstAttribute="top" secondItem="kdL-b4-Dzw" secondAttribute="top" constant="328" id="oxA-fc-tmz"/>
                             <constraint firstItem="Grh-5W-E5l" firstAttribute="centerX" secondItem="8Kn-Ff-bsD" secondAttribute="centerX" id="r3j-dd-EBL"/>
                             <constraint firstItem="Grh-5W-E5l" firstAttribute="top" secondItem="acU-3t-6Ib" secondAttribute="bottom" constant="89" id="zIY-A0-40J"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kdL-b4-Dzw"/>
                     </view>
                     <navigationItem key="navigationItem" title="UIKeyboard-Handling" id="rXF-cr-KIr"/>
                 </viewController>
@@ -91,10 +89,6 @@
         <scene sceneID="fmC-J4-AIv">
             <objects>
                 <viewController id="uPk-oh-Utc" customClass="ScrollViewController" customModule="TextField_Keyboard" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZKZ-cJ-79z"/>
-                        <viewControllerLayoutGuide type="bottom" id="fJa-WA-lqV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cYS-Xo-rLq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="936"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,13 +188,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fJa-WA-lqV" firstAttribute="top" secondItem="Axf-b4-mfz" secondAttribute="bottom" id="5q1-sM-76e"/>
-                            <constraint firstItem="Axf-b4-mfz" firstAttribute="top" secondItem="ZKZ-cJ-79z" secondAttribute="bottom" id="C1p-aw-Qgr"/>
+                            <constraint firstItem="GxQ-kf-BaO" firstAttribute="bottom" secondItem="Axf-b4-mfz" secondAttribute="bottom" id="5q1-sM-76e"/>
+                            <constraint firstItem="Axf-b4-mfz" firstAttribute="top" secondItem="GxQ-kf-BaO" secondAttribute="top" id="C1p-aw-Qgr"/>
                             <constraint firstItem="xXY-8s-uCk" firstAttribute="height" secondItem="cYS-Xo-rLq" secondAttribute="height" priority="250" id="IUf-4W-RD2"/>
-                            <constraint firstItem="Axf-b4-mfz" firstAttribute="leading" secondItem="cYS-Xo-rLq" secondAttribute="leading" id="Zwe-qS-4WQ"/>
+                            <constraint firstItem="Axf-b4-mfz" firstAttribute="leading" secondItem="GxQ-kf-BaO" secondAttribute="leading" id="Zwe-qS-4WQ"/>
                             <constraint firstItem="xXY-8s-uCk" firstAttribute="width" secondItem="cYS-Xo-rLq" secondAttribute="width" id="h0Z-To-fBs"/>
-                            <constraint firstAttribute="trailing" secondItem="Axf-b4-mfz" secondAttribute="trailing" id="hqV-hU-FZw"/>
+                            <constraint firstItem="GxQ-kf-BaO" firstAttribute="trailing" secondItem="Axf-b4-mfz" secondAttribute="trailing" id="hqV-hU-FZw"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="GxQ-kf-BaO"/>
                     </view>
                     <navigationItem key="navigationItem" title="UIKeyboard-Handling" id="vJw-Ct-zLC"/>
                     <size key="freeformSize" width="375" height="1000"/>
